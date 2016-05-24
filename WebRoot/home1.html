@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+a:link{
+text-decoration:none;
+color:#000;
+}
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 微软雅黑;
+}
+
+div {
+	/* border-style: solid;
+	border-color: blue rgb(25%, 35%, 45%) #909090 red;
+	border-width: 0.1px; */
+	text-align: center;
+	margin: 0 auto;
+}
+
+#topdiv {
+	height: 150px;
+	background-image: url(img/banner.png);
+	background-position: 0 100%;
+}
+#bodydiv {
+	height: 1335px;
+	background-color: #EDEADF;
+}
+
+#footdiv {
+	height: 220px;
+}
+
+/*图片轮播 */
+#main_head {
+	width: 1420px;
+	height: 470px;
+	font-size: 100%;
+}
+
+#home_turn {
+	float: left;
+}
+
+#main_body {
+	height: 860px;
+	width: 1220px;
+}
+
+#news_center {
+	height: 860px;
+	width: 800px;
+	margin: 0 770px 0 auto;
+	
+}
+
+#body_head{
+	width:750px;
+	height:80px;
+	margin-left: 0px;
+	position:relative;
+}
+#body_head a{
+	position: absolute;
+	top:8px;
+	font-size: 18px;
+}
+#body_right {
+	height: 860px;
+	width: 350px;
+	float: right;
+	border-color: black;
+	margin-right: 20px;
+}
+.body_right_head,#body_head{
+	
+	text-align: left;
+	
+	color:#51c0a6;
+}
+#body_contact_head{
+	width:350px;
+	height:110px;
+	font-size: 18px;
+}
+#body_contact_head a{
+	position: relative;
+	top:10px;
+}
+#body_href_head{
+	height:80px;
+	width:350px;
+	position:relative;
+}
+#body_href_head a{
+	margin-top:25px;
+	font-size: 18px;
+	position:absolute;
+	top:8px;
+}
+.body_right_content{
+	
+	background-image: url(img/div.png);
+	background-position: 0% 0%;
+	background-repeat: no-repeat;
+}
+#body_right_contact{
+	width:350px;
+	height:220px;
+	background-image: url(img/contact_us.png);
+}
+  #body_right_contact ul{
+	list-style-type: none;
+	margin-top:7px;
+	margin-left:110px;
+	padding-top:80px;
+} 
+#body_href_content{
+	width:350px;
+	height:410px;
+	background-color: #E6E0D2;
+}
+#body_href{
+	width: 350px;
+	height: 490px;
+	border-color: yellow;
+}
+
+
+#contact_way {
+	width: 350px;
+	height: 220px;
+	border-color: yellow;
+}
+
+#foot_con {
+	height: 180px;
+	background-image: url(img/foot_1.png);
+}
+
+#left_a {
+	position: relative;
+	right: 646px;
+	top: 225px;
+}
+
+#right_a {
+	position: relative;
+	left: 646px;
+	top: 225px;
+}
+.div_img{
+    margin-top:-10px;
+}
+.home_news {
+	width: 350px;
+	height: 260px;
+	margin: 0px;
+	background-image: url(img/div.png);
+	background-position: 0% 0%;
+	background-repeat: no-repeat;
+	
+}
+.news_content{
+	width:350px;
+	height:256px;
+	position: relative;
+}
+.home_news_title_a{
+	width:300px;
+	float:right;
+	margin-right:2px;
+	margin-top:10px;
+	
+}
+.home_news_title_a a{
+	font-size: 16px;
+}
+.home_news_title_a a:hover{
+	color:#50c0a7;
+}
+.news_detail a:hover{
+	color:#50c0a7;
+}
+.news_head_a{
+	width:360px;
+	height:60px;
+	margin-top:4px;
+}
+/* .home_news_date_a{
+	width:50px;
+	height:60px;
+	background-color:#50C0A7;
+} */
+.news_detail_a{
+	height:140px;
+	text-align: left;
+	margin-top:20px;
+	padding-top:10px;
+	line-height:143%;
+	font-size: 14px;
+	text-indent:2em;
+	color:#343434;
+	
+}
+.home_news_date{
+	width:50px;
+	height:60px;
+	background-color:#50C0A7;
+	position:absolute;
+	color: #fff;
+	font-size: 20px;
+}
+.home_news_date a{
+	position:absolute;
+	top:5px;
+	left:15px;
+}
+.news_detail{
+	width:350px;
+	height:252px;
+	text-align:left;
+	line-height:125%;
+	position:absolute;
+	top:4px;
+}
+.news_detail a{
+	margin-top:15px; 
+	font-size: 16px;
+}
+#news_2, #news_4, #news_6 {
+	float: right;
+	
+}
+
+.news_img {
+	width: 350px;
+	height: 180px;
+}
+
+/*导航栏  */
+#guid {
+	height: 45px;
+	background-color: #50C0A7;
+}
+
+#guid div {
+	height: 45px;
+	width: 1220px;
+	margin-right: 342px;
+}
+
+#guid img {
+	display: show;
+	margin-left: -8px;
+}
+
+#top_find {
+	height: 30px;
+	width: 250px;
+	margin-top: 45px;
+	margin-right: 400px;
+	background-image: url(img/find_01.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#topdiv div p {
+	background-color: black;
+	color: #F1D4F2;
+	text-align: right;
+	padding: 10px;
+	font-size: 3px;
+}
+
+input {
+	width: 180px;
+	height: 22px;
+	margin-top: 5px;
+	padding-left: 10px;
+	outline: 0;
+}
+
+#top_find img {
+	float: right;
+	margin-right: 10px;
+	margin-top: 5px;
+}
+
+#foot_d {
+	height: 180px;
+	text-align: left;
+	color: white;
+}
+
+#foot_d ul {
+	list-style-type: none;
+}
+
+/* #foot_d li {
+	margin-top: 10px;
+	font-size: 8px;
+}
+ */
+#foot_c {
+	height: 40px;
+	background-color:#29806D;
+	
+} 
+
+#foot_c p {
+	height: 10px;
+	margin-top: 8px;
+	padding: 5px 20px 5px 20px;
+}
+
+
+</style>
+<script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="js/timeFormat.js"></script>
+<script type="text/javascript">
+	$(function() {
+		//鼠标悬停图片切换
+		$("#img_home_2").mousemove(function(){
+			this.src="img/hover_02.png";
+		});
+		$("#img_home_2").mouseout(function(){
+			this.src="img/nomal_02.png";
+		});
+		$("#img_home_3").mousemove(function(){
+			this.src="img/hover_03.png";
+		});
+		$("#img_home_3").mouseout(function(){
+			this.src="img/nomal_03.png";
+		});
+		$("#img_home_4").mousemove(function(){
+			this.src="img/hover_04.png";
+		});
+		$("#img_home_4").mouseout(function(){
+			this.src="img/nomal_04.png";
+		});
+		$("#img_home_5").mousemove(function(){
+			this.src="img/hover_05.png";
+		});
+		$("#img_home_5").mouseout(function(){
+			this.src="img/nomal_05.png";
+		});
+	});
+	
+	$(function(){
+		$.ajax({
+		url:"http://localhost:8090/jiayu/news/listhomenews.do",
+        dataType:"json",
+        success:function(result){
+          	if(result.status){
+          		var newsList=result.data;
+          		var num_2=1;
+          		var num_1=2;
+          		for(i=0;i<newsList.length;i++){
+          			var title=newsList[i].n_title;
+          			var time=newsList[i].n_createtime;
+          			var id=newsList[i].n_id;
+          			var type=newsList[i].n_type;
+          			var view=newsList[i].n_view;
+          			var date = new Date(time);
+          			var day=date.getDate();
+          			var month=date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1;
+          			if(type==2){
+          				var n_id="#news_"+num_2;
+          				var news_view="<div class='news_content'>"+
+											"<div class='news_detail'>"+view+
+											"</div>"+
+											"<div class='home_news_date'>"+
+												"<a>"+month+"</br>"+day+"</a>"+
+											"</div>"+
+										"</div>";
+          				$(n_id).html(news_view);
+          				if(num_2==1){
+          					num_2+=2;
+          				}
+          				num_2++;
+          			}else if(type==1){
+          				var n_id="#news_"+num_1++;
+          				news_view="<div class='news_head_a'>"+
+									"<div class='home_news_title_a'>"+
+									"	<a href='news-"+id+".do' target="+id+"_black>"+title+"</a></div>"+
+									"<div class='home_news_date'>"+
+									"<a>"+month+"</br>"+day+"</a>"+
+									"</div>"+
+								"</div>"+
+								"<div class='news_detail_a'>"+
+									"<a>"+view+"...</a>"+
+								"</div>";
+						$(n_id).html(news_view);	
+          			}
+          		}
+          	}else{
+          	alert("系统繁忙");
+          	}
+          }
+		});
+	});
+</script>
+</head>
+<body>
+	<!-- 顶部 -->
+	<div class="mkhome" id="topdiv"></div>
+	<!-- 导航 -->
+	<div class="mkhome" id="guid">
+		<div>
+			<img id="img_home_1" alt="" src="img/down_01.png">
+			<a href="newslist1.html"><img id="img_home_2" alt="" src="img/nomal_02.png" ></a>
+		    <a href="product.html"><img id="img_home_3" alt="" src="img/nomal_03.png"></a>
+			<a href="connect.html"><img id="img_home_4" alt="" src="img/nomal_04.png"></a>
+		   	<a href="introduce.html"><img id="img_home_5" alt="" src="img/nomal_05.png"></a>
+		</div>
+	</div>
+	<!-- 内容 -->
+	<div class="mkhome" id="bodydiv">
+		
+		<div id="main_head">
+			<!-- 图片轮播 -->
+			<section id="rt-showcase-surround">
+				<div id="rt-showcase" class="slider-container rt-overlay-dark">
+					<div class="rt-container slider-container">
+						<div class="rt-grid-12 rt-alpha rt-omega">
+
+							<link rel="stylesheet" href="css/style.css">
+							<!--[if IE]><link rel="stylesheet" href="css/ie.css"><![endif]-->
+							<!--[if lte IE 9]><script type="text/javascript" src="js/ie.js"></script><![endif]-->
+
+							<div class="csslider1 autoplay">
+								<input name="cs_anchor1" autocomplete="off" id="cs_slide1_0"
+									type="radio" class="cs_anchor slide"> <input
+									name="cs_anchor1" autocomplete="off" id="cs_slide1_1"
+									type="radio" class="cs_anchor slide"> <input
+									name="cs_anchor1" autocomplete="off" id="cs_slide1_2"
+									type="radio" class="cs_anchor slide"> <input
+									name="cs_anchor1" autocomplete="off" id="cs_play1" type="radio"
+									class="cs_anchor" checked> <input name="cs_anchor1"
+									autocomplete="off" id="cs_pause1" type="radio"
+									class="cs_anchor">
+								<ul>
+									<div
+										style="width: 100%; visibility: hidden; font-size: 0px; line-height: 0;">
+										<img src="img/home_01.png" style="width: 100%;">
+									</div>
+									<li class="num0 img"><img src="img/home_01.png" alt=""
+										title="" /></li>
+									<li class="num1 img"><img src="img/home_01.png" alt=""
+										title="" /></li>
+									<li class="num2 img"><img src="img/home_01.png" alt=""
+										title="" /></li>
+
+								</ul>
+								<div class="cs_description"></div>
+
+								<div class="cs_arrowprev">
+									<label class="num0" for="cs_slide1_0"></label> <label
+										class="num1" for="cs_slide1_1"></label> <label class="num2"
+										for="cs_slide1_2"></label>
+								</div>
+								<div class="cs_arrownext">
+									<label class="num0" for="cs_slide1_0"></label> <label
+										class="num1" for="cs_slide1_1"></label> <label class="num2"
+										for="cs_slide1_2"></label>
+								</div>
+
+								<div class="cs_bullets">
+									<label class="num0" for="cs_slide1_0">
+									 <span class="cs_point"></span> 
+									</label> 
+									<label class="num1" for="cs_slide1_1">
+								    <span class="cs_point"></span> 
+									</label> 
+									<label class="num2" for="cs_slide1_2">
+									 <span class="cs_point"></span> 
+									</label>
+								</div>
+
+							</div>
+
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</section>
+			<!-- /slider -->
+		</div>
+		<div id="main_body">
+			<div id="body_right">
+				<div id="body_href">
+					<div class="body_right_head" id="body_href_head">
+						<a>友情链接</a>
+					</div>
+					<div class="body_right_content" id="body_href_content">
+					</div>
+				</div>
+				
+				
+				
+				<div id="contact_way" class="none">
+					<div class="body_right_head" id="body_contact_head">
+						<a></br></br>联系我们</a>
+					</div>
+					<div class="body_right_content" id="body_right_contact">
+					<ul>
+						<li><h2>400-100-5768</h2></li>
+						<li>周一至周五 8:00-18:00</li>
+						<li>(仅收市话费)</li>
+					</ul>
+					</div>
+				</div>
+			</div>
+			<div id="news_center">
+				<div id="body_head">
+					<a></br>新闻中心</a>
+				</div>
+				<!-- 全文字 -->
+				<div class="home_news" id="news_2"></div>
+				<!-- 图文 -->
+				<div class="home_news" id="news_1"></div>
+				<div class="home_news" id="news_4"></div>
+				<!-- 全文字 -->
+				<div class="home_news" id="news_3"></div>
+				<div class="home_news" id="news_6"></div>
+				<div class="home_news" id="news_5"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- 底部 -->
+	<div class="mkhome" id="footdiv">
+		<div id="foot_con">
+			<div id="foot_d">
+			</div>
+			<div id="foot_c">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

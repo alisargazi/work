@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<script type="text/javascript" src="_js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#file1").live("change",function(){
+		
+		
+	});
+
+
+
+});
+
+
+
+</script>
+
+<body>
+<h1></h1>
+
+<form name="" action="" method="" enctype=""> 
+<input type ="text" />
+<input type ="file" name="file1" id="file1"/><br/> 
+
+</form> 
+ <input id="FileUpload" type="file" style="width:448px; height: 22px;" 
+                                    onclick="return FileUpload_onclick()" onchange="return FileUpload_onselect()"/>
+
+ 
+
+ <script type="text/javascript" language="javascript">    
+        function FileUpload_onselect()
+        {
+            var path;
+            path=document.forms[0].FileUpload.value;      //C:\Documents and Settings\hud\桌面\AddFile.jpg
+            var aa;
+            aa=path.split('.');
+            document.all('TbxName').value=aa[aa.length-1];  //jpg 结果
+
+            var name;
+            name=path.split('\\'); 
+            var bb=name[name.length-1];             
+            document.all('Tbx_FileName').value=bb.substr(0,bb.indexOf('.'));  //AddFile 结果
+        }
+    </script>
+</body>
+</html>

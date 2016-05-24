@@ -1,0 +1,334 @@
+@charset "utf-8";
+/* 简单流媒体
+   注意: 流媒体要求您删除 HTML 中媒体的高度和宽度属性
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+img, object, embed, video {
+	max-width: 100%;
+}
+/* IE 6 不支持最大宽度，因此默认为 100% 宽度 */
+.ie6 img {
+	width: 100%;
+}
+html, body {
+	height: 100%;
+	max-height:800px;
+	_height:expression((document.documentElement.clientHeight||document.body.clientHeight) > 800?"800px":"");
+	overflow:hidden;
+}
+body {
+	font-size:100%;
+	margin: 0px;
+}
+input#remember_cbx{
+	display:none;
+}
+head {
+	display: none;
+	height: 0;
+}
+button{
+	border:0;	
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;	
+}
+div#page-inner {
+	min-width:375px;
+	height: 100%;
+	max-height:800px;
+}
+img#vcodeimg{
+	width:72px;
+	height:32px;
+	border:0;
+}
+div#header {
+	display:block;
+	position:relative;
+	min-height:100px;
+	height:18%;
+	vertical-align:middle;
+	_height:expression((document.documentElement.clientHeight||document.body.clientHeight) > 148?"148px":"");
+	overflow:hidden;
+	max-height:148px;
+	background:url(../images/bg01.png) no-repeat;
+	background-position:center 0px;
+}
+div#logo{
+	background-image:url(../images/logo.png);
+	height:86px;
+	width:396px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-43px 0 0 -198px;
+	_background-image:none; 
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enable="true",src="../images/logo.png");
+}
+div#footer {
+	max-height:42px;
+	min-height:42px;
+	_height:expression((document.documentElement.clientHeight||document.body.clientHeight) > 42?"42px":"");
+	overflow:hidden;
+	background-image:url(../images/bg01.png);
+	background-repeat:repeat-y;
+	background-position:center 42px;
+	position:relative;
+}
+div#copyright{
+	position:absolute;
+	font-size:18px;
+	font-family:"微软雅黑","宋体";
+	color:#fff;
+	top:50%;
+	left:50%;
+	margin:-15px 0 0 -150px;
+	height:40px;
+	width:300px;
+	text-align:center;
+}
+div#content{
+	
+	padding-top:6%;
+}
+div#content-wrapper { 
+	position:relative;
+	height:77%;
+	*height:618px;
+	min-height:354px;
+	max-height:618px;
+	background-image: url(../images/bg01.png);
+	background-position:center -148px;
+	background-repeat:no-repeat;
+}
+div#login{
+	clear: both;
+	width: 420px;
+	height:280px;
+	display: block;
+	background-image: url(../images/bg_login.png);
+	background-repeat: no-repeat;
+	background-position: center 0;
+	3padding:0 30px;
+	padding-top:38px;
+	padding-bottom:0px;
+	border-radius:6px;
+	margin:0 auto;
+	_background-image:none; 
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enable="true",src="../images/bg_login.png");
+}
+div#login div#sumary{
+	font-family:"微软雅黑","宋体";
+	font-size:0.875em;
+	color:#fff;
+	margin-top:10px;
+	padding:15px;
+	padding-bottom:0px;
+	width:340px;
+	margin:0 auto;
+}
+div#login div#sumary p{
+	line-height:20px;
+}
+div#login-inner{
+	position:relative;
+	margin:0 auto; 
+	width:320px;
+	height:250px;
+}
+div#login-inner input{
+	boder:1px solid #888;
+	padding-left:4px;
+	font-size:18px;
+	height:30px;
+	vertical-align:middle;
+	width:200px;
+	line-height:30px;
+	
+}
+div#login-inner input#vcode{
+	width:124px;
+}
+div#login-inner #button{
+	width:290px;
+	text-align:right;
+	display:block;
+	margin-top:10px;
+}
+div#login-inner #remember{
+	vertical-align:middle;
+	_padding-top:10px;
+	height:40px;
+	_height:30px;
+	text-align:left;
+	display:block;
+	margin:0 auto;
+	width:155px;
+}
+div#login-inner #remember label{
+	font-size:14px;
+	color:#662052;
+	width:125px;
+	display:inline;
+	cursor:default;
+}
+div#login-inner #remember img{
+	cursor:pointer;
+	border:none;
+	
+}
+div#errmsg{
+	margin:0 auto;	
+	width:180px;
+	text-align:center;
+	padding:30px;
+}
+div#errmsg a{
+	color:#09f;
+}
+
+div#login-inner #link{
+	text-align:justify;
+	width:300px;
+	display:block;
+	height:40px;
+	position:absolute;
+	margin-top:-20px;
+	top:100%;
+}
+div#login-inner #link a{
+	font-size:14px;
+	color:#662052;
+	display:inline;
+	width:140px;
+	overflow:hidden;
+}
+div#login p {
+margin: 0px 15px; 
+	line-height:50px;
+}
+
+div#login-inner p {
+	margin: 0px 10px; 
+	line-height:50px;
+	height:50px;
+}
+div#login label {
+	/*font-size: 1.25em;*/
+	font-family:"微软雅黑","Microsoft YaHei","宋体";
+	text-justify: distribute-all-lines;
+	width: 80px;
+	display: inline-block;  
+	text-align:right;
+	*display:inline; 
+	_zoom:1; 
+}
+div#login .button {
+	border: 0;
+	margin:0;
+	margin-left:5px;
+	_margin-left:10px;
+	position:relative;
+	cursor:pointer;
+	width:98px;
+	height:31px;
+}
+div#page { 
+	position:relative;
+	width: 100%;
+	max-height:800px;
+	height: 100%;
+	overflow:hidden;
+}
+
+input#login_btn{
+	background:url(../images/bt_login_selected.png) no-repeat;
+	border:none;
+	_background-image:none; 
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enable="true",src="../images/bt_login_selected.png");
+}
+#login_btn:hover{
+	background-image:url(../images/bt_login_normal.png);
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enable="true",src="../images/bt_login_normal.png");
+}
+#forgetpassword_btn:hover{
+	background-image:url(../images/bt_forgetpassword_normal.png);
+	_background-image:none; 
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enable="true",src="../images/bt_forgetpassword_normal.png");
+}
+#forgetpassword_btn{
+	background:url(../images/bt_forgetpassword_selected.png) no-repeat;
+	_background-image:none; 
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enable="true",src="../images/bt_forgetpassword_selected.png");
+}
+
+
+@media only screen and (max-width:480px)  {
+div#login{
+width:350px;
+}
+}
+
+
+@media only screen and (max-width:380px)  {
+div#page { 
+	overflow-x:scroll;
+}
+}
+
+@media only screen and  (max-height:680px){
+div#content{
+	padding-top:6%;
+}
+div#login div#sumary{
+	margin-top:10px;
+}
+}
+
+@media only screen and  (max-height:600px) {
+div#content{
+	padding-top:4%;
+}
+div#content-wrapper { 
+	height:75%;
+}
+}
+
+@media only screen and  (max-height:520px) {
+div#content{
+	padding-top:4%;
+}
+div#content-wrapper { 
+	height:73%;
+}
+}
+
+@media only screen and  (max-height:500px) {
+div#content{
+	padding-top:3%;
+}
+div#content-wrapper { 
+	height:73%;
+}
+}
+
+
+@media only screen and  (max-height:480px) {
+div#content{
+	padding-top:2%;
+}
+div#page { 
+	overflow-y:scroll;
+}
+div#login div#sumary{
+	margin-top:10px;
+}
+div#content-wrapper { 
+	height:70%;
+}
+}

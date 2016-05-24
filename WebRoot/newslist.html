@@ -1,0 +1,214 @@
+
+   
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+<meta name="Description" content="" />
+<meta name="Keywords" content="南京大学,新闻网,校内新闻" />
+<title>陈雨生新闻网</title>
+<link  href="list.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="/js/coin-slider-styles.css" type="text/css" /> 
+<link rel="stylesheet" href="/js/jquery-ui-1.10.1.custom.min.css" type="text/css" /> 
+<script type="text/javascript" src="_js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/coin-slider.min.js"></script>  
+<script type="text/javascript" src="/js/niftycube.js"></script>
+<script type="text/javascript" src="js/timeFormat.js"></script>
+<script type="text/javascript" src="js/cookie_util.js"></script>
+<script type="text/javascript" >
+	$(function(){
+		$.ajax({
+		url:"http://localhost:8090/jiayu/news/listnews.do",
+          type:"post",
+          data:{"page":1},
+          dataType:"json",
+          success:function(result){
+          	if(result.status){
+          		var newsList=result.data;
+          		for(i=0;i<newsList.length;i++){
+          			var title=newsList[i].n_title;
+          			var time=newsList[i].n_createtime;
+          			var id=newsList[i].n_id;
+          			var d=getLocalTime(time); 
+          			var s_li="<li><span class='date'> "+d+"</span> <a class='the_news_title'><a href='news-"+id+".do'>"+title+"</a></li>";
+          			var $li = $(s_li);
+					$li.data("newsId",id);
+					$("#news_list").append($li);
+          		}
+          	}else{
+          	alert("系统繁忙");
+          	}
+          }
+		});
+		$("#news_list").on("click","li", function(){
+	 	 $("#news_list li").removeClass("checked");
+	 	 $(this).find("a").addClass("checked");
+	 	 var newsId = $(this).data("newsId");
+	  	 addCookie("newsId",newsId,"1/3600");
+	 });
+	});
+	
+</script>
+<style type="text/css">
+ li a.the_news_title{
+	cursor:pointer;
+ } 
+</style>
+</head>
+
+<body>
+  
+  <div id="top">
+			<div id="today">2016年5月9日</div>
+			<div id="weather"></div>
+			<div id="toplinks">﻿<a href="">首页</a> | <a href="#" onclick="">加入收藏</a> | <a href="">联系我们</a> | <a href="" target="_blank">南京大学</a> | <a href="" target="_blank">登陆</a></div>
+			<div id="logo" title="南京大学新闻网首页"><div id="zhuban">南京大学新闻中心主办</div></div>
+			<div id="toplinks_self">                                    <a href=''>校内新闻</a> 
+								  | <a href="">媒体聚焦</a>
+								  | <a href=''>校园生活</a>								  | <a href=''>科技动态</a>								  | <a href=''>社科动态</a>								  | <a href="">视频新闻</a><br>
+								  
+									<a href=''>院系动态</a> 
+								  | <a href=''>学人视点</a>								  | <a href=''>理论园地</a>								  | <a href=''>校友菁华</a>								  | <a href="">美丽南大</a>
+								  | <a href="yxnd.html">影像南大</a>
+		<!--
+									<a href="#">南大记忆</a> 
+								  | <a href="#">影像资料</a>
+								  | <a href="#">人才培养</a>
+								  | <a href="#">招生工作</a>
+								  | <a href="#">就业指南</a>
+								  | <a href="#">美丽南大</a>
+								 
+								 --></div><!--toplinks_self end-->
+	
+	  </div><!--top end-->
+	  
+	  <div id="nav">
+			  <div id="banner_c">
+						<div id="slogan"></div>
+						
+						<div id="search"><input type="button" id="searchbtn" /><input type="text" id="searchtxt"  value="搜索···"/></div>
+			  </div><!--banner_c end-->
+	  </div><!--nav end-->
+	  <script>
+	  $.getScript('js/jquery-ui-1.10.1.custom.min.js');
+	  
+	  $(function(){
+	  $('#searchtxt').one("click",function(){
+	  	$(this).val('');
+	  	});
+		
+	  $('#searchbtn').bind("click",function(){
+	      var txt=$('#searchtxt').val();
+		  var re=/[\!\@\#\$\%\^\&\*\(\)\……\——\（\）\~\·\`\<\>\?\\\,\.\;\'\"\《\，\。\；\‘\:\：\“\？\》\、\￥\[\]\{\}\【\】]+/;
+		  
+		  if(re.test(txt)){
+				$("<div>").html("含有非法字符").appendTo("body").dialog();
+				}else
+				{
+				location.href='searchsite.php?r='+txt;
+				
+				
+				}
+		  
+		  
+	    });	
+	//=======================================
+	$('#logo').click(function(){
+		window.location.href="";
+		});	
+	  });
+	  </script>  
+  <div id="main">
+  
+  		<div id="left">
+			
+			<div class="cat_list" pagenum="214" id="cat_list">
+				<div class="title"><div class="colname"><img src=''></div></div>
+				<div class="content" id="cat_list_content">
+						   
+<ul id="news_list">
+
+</ul>					</div>	
+			</div>
+			<div id="page_nav">
+			<a id="prev" href="#" pn="" cn="1">&lt;</a>
+			<div id="curpage">1</div>
+			<a id="next" href="#" pn="" cn="1">&gt;</a>
+			</div>
+		</div><!--left 左侧 end-->
+
+				
+		<div id="right">
+			<div class="fast_list" id="newest">
+				
+			</div>
+			<div class="fast_list" id="mostvisit">
+				 <div class="title"><div class="colname"><img src=''></div></div>
+				<div class="content_small">
+							</div>	
+			</div>
+		    </div><!--right1 右侧 end-->			  
+  </div><!--main end-->
+ <div id="foot">
+		<div id="foot-info">
+			版权所有 隽远科技  
+			<br> 2009-2016 All Rights Reserved
+			&copy; 隽远科技 
+		</div>
+	</div>
+  
+</body>
+</html>
+
+<script type="text/javascript">
+$(function(){
+var weather='<iframe width="450" scrolling="no" height="18" frameborder="0" allowtransparency="true" src="cache/weather.html"></iframe>';
+$('#weather').html(weather);
+
+  $(".content>ul>li:odd").css("background-color","#ddf");
+  
+  //给prev，next赋值for字段，首先根据request的字段来算，刷新时将回到第一页
+  $("#prev").attr("pn",1);
+  $("#next").attr("pn",2);
+  
+  
+  $("#prev,#next").mouseover(function(){
+  $(this).css("background-color","#c40");
+  //alert($(this).attr('pn'));
+  });
+  
+   $("#prev,#next").mouseleave(function(){
+  $(this).css("background-color","#069");
+  });
+  
+  
+  $("#prev,#next").bind("click",function(event){
+  	event.preventDefault();
+  	var pn=$(this).attr("pn");
+	var cn=$(this).attr("cn");
+	    var tmp1=parseInt(pn)-1;
+		var tmp2=parseInt(pn)+1;
+		
+	var page=$("#cat_list").attr("pagenum");
+	//alert(page);
+	//var pn=substr(t,);
+	$.post("catlist.html",{'rstr':cn+','+pn+',20'},function(result){
+		$('#cat_list_content').hide().html(result).fadeIn();
+		$(".content>ul>li:odd").css("background-color","#ddf");
+		$('#curpage').text(pn);
+		
+		ppn=Math.max(tmp1,1);
+		npn=Math.min(tmp2,page);
+		
+		$('#prev').attr("pn",ppn);
+		$('#next').attr("pn",npn);
+		
+	});
+	
+  });
+})
+</script> 
+
+
+

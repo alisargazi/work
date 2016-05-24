@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="js/cookie_util.js"></script>
+<style type="text/css">
+#edit {
+	height: 500px;
+	width: 800px;
+}
+
+div {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+#abstr{
+	width:800px;
+	height:70px;
+}
+li{
+	list-style-type: none;
+	
+}
+#recomend_edit{
+	position: absolute;
+	
+}
+</style>
+<script type="text/javascript">
+	$(function() {
+		var uid = getCookie("uid")
+		if (uid == null || uid == "") {
+			window.location.href = "log_in.html"
+		}
+		$("#hand").click(function() {
+			var title = $("#articleTitle").val().trim();
+			var abstr = $("#abstr").val().trim();
+			var body = CKEDITOR.instances.body.getData();
+			$.ajax({
+				url : "http://localhost:8090/jiayu/news/create.do",
+				type : "post",
+				data : {
+					"title" : title,
+					"body" : body,
+					"abstr":abstr
+				},
+				dataType : "json",
+				success : function(result) {
+					alert(result.msg);
+
+				}
+			});
+
+		});
+
+	});
+</script>
+</head>
+<body>
+	<div id="recomend_edit">
+		<a href="recommened_news_edit.html">新闻处理</a>
+	</div>
+	<dt>
+		<div class="fWrap" style=" padding-bottom:8px;">
+			<ul>
+				<li>
+				<span class="cTit" id="title">标题：</span>
+				<div class="cInfo">
+					<input id="articleTitle" name="blog_title" type="text" size="96"
+						class="Fm_input1" value="" />
+				</div>
+				</li>
+				<li>
+				<span class="cTit" id="title">摘要：</span>
+				<div class="cInfo">
+					<textarea id="abstr" style="overflow:auto">111</textarea>
+
+				</div>
+				</li>
+			</ul>
+		</div>
+	</dt>
+	<dt>
+		<div id="edit">
+			<td><textarea name="financial.bz" id="body"></textarea> <script
+					type="text/javascript">
+				var editor = CKEDITOR.replace('financial.bz');
+			</script></td>
+		</div>
+	</dt>
+	<dt>
+		<div>
+			<input type="button" name="" id="remain" value='&nbsp保&nbsp存&nbsp'
+				tabindex='3' /> <input type="button" name="" id="hand" value='提交'
+				tabindex='4' />
+		</div>
+	</dt>
+</body>
+
+
+
+</html>

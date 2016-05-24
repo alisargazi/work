@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ <mapper namespace="com.yush.mk.dao.NewsDao">
+ <select id="findById"  parameterType="string"
+		resultType="com.yush.mk.entity.News">
+	SELECT n_id,n_title,n_body,n_createtime,n_abstract FROM jy_news WHERE n_id=#{id}
+</select>
+<select id="findAllNews"   parameterType="hashmap" resultType="hashmap">
+	SELECT n_id,n_title,n_createtime,n_body,n_img,n_type FROM jy_news  ORDER BY n_createtime DESC LIMIT  #{start},10
+</select>
+<select id="findHomeNews" resultType="hashmap">
+	SELECT t1.n_id,t1.n_title,n_view,n_type,t1.n_createtime FROM jy_news t1 JOIN jy_news_home t2 ON t1.n_id=t2.n_id
+</select>
+<select id="findRecommedNews" parameterType="int" resultType="hashmap">
+	SELECT n_id,n_title,n_createtime,n_body,n_img,n_type FROM jy_news WHERE n_recommend="1" ORDER BY n_createtime DESC LIMIT  #{start},10;
+</select>
+
+<insert id="createNews" parameterType="com.yush.mk.entity.News">
+	INSERT INTO jy_news(n_id,n_title,n_body,n_createtime,n_type,n_view,n_img,n_abstract)
+	VALUES(
+	#{n_id},#{n_title},#{n_body},now(),#{n_type},#{n_view},#{n_img},#{n_abstract}
+	)
+</insert>
+<insert id="createNewsHome"  parameterType="com.yush.mk.entity.HomeNews">
+	INSERT INTO jy_news_home(n_id,n_home)
+	VALUES(
+	#{n_id},#{n_home}
+	)
+</insert>
+<delete id="deleNewsHome"  parameterType="string">
+	DELETE FROM jy_news_home WHERE n_num=(SELECT 
+	MIN(n_num) FROM (SELECT n_num
+ FROM jy_news_home WHERE n_home=#{n_home}) t1);
+</delete>
+<delete id="deleNews"  parameterType="string">
+	DELETE FROM jy_news WHERE n_id=#{n_id};
+</delete>
+<update id="setRecommend" parameterType="string">
+	UPDATE jy_news SET n_recommend=1  WHERE n_id=#{n_id};
+</update>
+<update id="removeRecommend" parameterType="string">
+	UPDATE jy_news SET n_recommend=0  WHERE n_id=#{n_id};
+</update>
+</mapper>
