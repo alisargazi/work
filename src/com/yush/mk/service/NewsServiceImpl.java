@@ -1,5 +1,6 @@
 package com.yush.mk.service;
 
+import java.security.Timestamp;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +15,7 @@ import com.yush.mk.entity.MkResult;
 import com.yush.mk.entity.News;
 import com.yush.mk.util.MkUtil;
 @Service
-public class NewsServiceImp1 implements NewsService{
+public class NewsServiceImpl implements NewsService{
 	@Resource
 	private NewsDao newsDao;
 	@Override
@@ -109,13 +110,35 @@ public class NewsServiceImp1 implements NewsService{
 	/**
 	 * 推荐新闻列表
 	 */
-	public MkResult findRecommedNews(int page) {
+	public MkResult findRecommendNews(int page) {
 		List<Map<String,String>> newsList ;
 		MkResult result = new MkResult();
 		int start =page*10-10;
-		newsList=newsDao.findRecommedNews(start);
+		newsList=newsDao.findRecommendNews(start);
 		result.setMsg("加载成功！");
 		result.setData(newsList);
+		result.setStatus(1);
+		return result;
+	}
+	@Override
+	public MkResult findPreNews(String time) {
+		// TODO Auto-generated method stub
+		Map<String,String> news ;
+		MkResult result = new MkResult();
+		news=newsDao.findPreNews(time);
+		result.setMsg("加载成功！");
+		result.setData(news);
+		result.setStatus(1);
+		return result;
+	}
+	@Override
+	public MkResult findNextNews(String time) {
+		// TODO Auto-generated method stub
+		Map<String,String> news ;
+		MkResult result = new MkResult();
+		news=newsDao.findNextNews(time);
+		result.setMsg("加载成功！");
+		result.setData(news);
 		result.setStatus(1);
 		return result;
 	}

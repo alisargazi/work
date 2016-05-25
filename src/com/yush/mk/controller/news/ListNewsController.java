@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yush.mk.entity.MkResult;
 import com.yush.mk.service.NewsService;
-import com.yush.mk.service.UserService;
 @Controller
 @RequestMapping("/news")
 public class ListNewsController {

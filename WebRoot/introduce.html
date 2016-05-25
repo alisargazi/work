@@ -1,314 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>公司概况</title>
 <meta charset="utf-8">
-<style type="text/css">
-* {
-	margin: 0;
-	padding: 0;
-	font-family: 微软雅黑;
-}
-
-div {
-	 /* border-style: solid;
-	border-color: blue rgb(25%, 35%, 45%) #909090 red;
-	border-width: 0.1px;  */
-	text-align: center;
-	margin: 0 auto;
-}
-
-#topdiv {
-	height: 150px;
-	background-image: url(img/banner.png);
-	background-position: 0 100%;
-}
-#bodydiv {
-	height: 1335px;
-	background-color: #EDEADF;
-}
-
-#footdiv {
-	height: 220px;
-}
-
-/*图片轮播 */
-#main_head {
-	width: 1420px;
-	height: 470px;
-	font-size: 100%;
-}
-
-#home_turn {
-	float: left;
-}
-
-#main_body {
-	height: 860px;
-	width: 1220px;
-}
-
-#news_center {
-	height: 860px;
-	width: 800px;
-	margin: 0 770px 0 auto;
-	
-}
-
-#body_head{
-	width:750px;
-	height:80px;
-	margin-left: 0px;
-	position:relative;
-}
-#body_head a{
-	position: absolute;
-	top:8px;
-	font-size: 18px;
-}
-#body_right {
-	height: 860px;
-	width: 350px;
-	float: right;
-	border-color: black;
-	margin-right: 20px;
-}
-.body_right_head,#body_head{
-	
-	text-align: left;
-	
-	color:#51c0a6;
-}
-#body_contact_head{
-	width:350px;
-	height:110px;
-	font-size: 18px;
-}
-#body_contact_head a{
-	position: relative;
-	top:10px;
-}
-#body_href_head{
-	height:80px;
-	width:350px;
-	position:relative;
-}
-#body_href_head a{
-	margin-top:25px;
-	font-size: 18px;
-	position:absolute;
-	top:8px;
-}
-.body_right_content{
-	
-	background-image: url(img/div.png);
-	background-position: 0% 0%;
-	background-repeat: no-repeat;
-}
-#body_right_contact{
-	width:350px;
-	height:220px;
-	background-image: url(img/contact_us.png);
-}
-  #body_right_contact ul{
-	list-style-type: none;
-	margin-top:7px;
-	margin-left:110px;
-	padding-top:80px;
-} 
-#body_href_content{
-	width:350px;
-	height:410px;
-	background-color: #E6E0D2;
-}
-#body_href{
-	width: 350px;
-	height: 490px;
-	border-color: yellow;
-}
-
-
-#contact_way {
-	width: 350px;
-	height: 220px;
-	border-color: yellow;
-}
-
-#foot_con {
-	height: 180px;
-	background-image: url(img/foot_1.png);
-}
-
-#left_a {
-	position: relative;
-	right: 646px;
-	top: 225px;
-}
-
-#right_a {
-	position: relative;
-	left: 646px;
-	top: 225px;
-}
-.div_img{
-    margin-top:-10px;
-}
-.home_news {
-	width: 350px;
-	height: 260px;
-	margin: 0px;
-	background-image: url(img/div.png);
-	background-position: 0% 0%;
-	background-repeat: no-repeat;
-	
-}
-.news_content{
-	width:350px;
-	height:256px;
-	margin-top:4px;
-	position: relative;
-}
-.home_news_title_a{
-	width:300px;
-	float:right;
-	margin-right:2px;
-	margin-top:10px;
-	
-}
-.home_news_title_a a{
-	font-size: 16px;
-}
-.news_head_a{
-	width:360px;
-	height:60px;
-	margin-top:4px;
-}
-/* .home_news_date_a{
-	width:50px;
-	height:60px;
-	background-color:#50C0A7;
-} */
-.news_detail_a{
-	height:140px;
-	text-align: left;
-	margin-top:20px;
-	padding-top:10px;
-	line-height:143%;
-	font-size: 14px;
-	text-indent:2em;
-	color:#343434;
-	
-}
-.home_news_date{
-	width:50px;
-	height:60px;
-	background-color:#50C0A7;
-	position:absolute;
-	color: #fff;
-}
-.home_news_date a{
-	position:absolute;
-	top:5px;
-	left:15px;
-}
-.news_detail{
-	width:350px;
-	height:256px;
-	text-align:left;
-	line-height:125%;
-	position:absolute;
-	top:4px;
-}
-.news_detail a{
-	margin-top:15px; 
-	font-size: 16px;
-}
-#news_2, #news_4, #news_6 {
-	float: right;
-}
-
-#news_img {
-	width: 350px;
-	height: 180px;
-}
-
-/*导航栏  */
-#guid {
-	height: 45px;
-	background-color: #50C0A7;
-}
-
-#guid div {
-	height: 45px;
-	width: 1220px;
-	margin-right: 342px;
-}
-
-#guid img {
-	display: show;
-	margin-left: -8px;
-}
-
-#top_find {
-	height: 30px;
-	width: 250px;
-	margin-top: 45px;
-	margin-right: 400px;
-	background-image: url(img/find_01.png);
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-#topdiv div p {
-	background-color: black;
-	color: #F1D4F2;
-	text-align: right;
-	padding: 10px;
-	font-size: 3px;
-}
-
-input {
-	width: 180px;
-	height: 22px;
-	margin-top: 5px;
-	padding-left: 10px;
-	outline: 0;
-}
-
-#top_find img {
-	float: right;
-	margin-right: 10px;
-	margin-top: 5px;
-}
-
-#foot_d {
-	height: 180px;
-	text-align: left;
-	color: white;
-}
-
-#foot_d ul {
-	list-style-type: none;
-}
-
-/* #foot_d li {
-	margin-top: 10px;
-	font-size: 8px;
-}
- */
-#foot_c {
-	height: 40px;
-	background-color:#29806D;
-	
-} 
-
-#foot_c p {
-	height: 10px;
-	margin-top: 8px;
-	padding: 5px 20px 5px 20px;
-}
-
-
-</style>
+<link rel="stylesheet" href="css/home01.css" />
 <style type="text/css">
 	#bodydiv{
 		height:auto;
@@ -391,20 +86,17 @@ input {
 				<!-- part 1 -->
 				<div class="intr_part">
 					<div class="i_body_title">
-						<a>深耕中国  完善布局 </a>
+						<a>关于嘉钰</a>
 					</div>
 					<div class="i_body_content">
-						<a> <p> 嘉钰科技集团持续提升研发设计和工程技术服务能力，逐步建立起以中国大陆为中心，延伸发展至世界各地的国际化版图。</p>
-					        <p>在珠三角地区，布局深圳、佛山、中山、东莞、惠州等地，深圳园区将打造成专注于科技研发基地和电子商务、电子模块大型贸易、新产品导入、人才培训中心，加速集团产业转型升级，力争成为珠三角地区产业转型升级的主力推手。</p>
-					        <p>在长三角地区，布局昆山、上海、南京、淮安、杭州、宁波、嘉善等地，形成以精密连接器、无线通讯组件、液晶显示器、网通设备机构件、半导体设备和软件技术开发等产业链及供应链聚合体系，促进区域产业结构优化和升级。</p>
-					        <p>在环渤海地区，布局北京、天津、烟台、菏泽、廊坊、秦皇岛、营口等地，以无线通讯、消费电子、云运算、纳米科技、计算机组件、伺服马达、精密机床、环境科技等为骨干产业，为区域经济发展输送科技与制造动能。</p>
-					        <p>在中西部地区，布局太原、晋城、郑州、济源、南阳、鹤壁、濮阳、武汉、长沙、衡阳、南宁、重庆、成都、贵阳、六盘水等地，重点发展精密模具、自动化设备、镁铝合金、汽车零部件、光机电模组、智能手机、平板电脑、智能电视等，助推“中部崛起”和“西部大开发”国家发展战略实施。</p>
+						<a> <p> 北京嘉钰影视文化传媒有限公司成立于2015年12月，坐落于北京市朝阳区高碑店吉里国际艺术园。业务包括影视剧策划及拍摄、新媒体程序研发、TVC广告制作、艺人经纪、会展策划等。</p>
+					        <p>2016年4月12日，北京嘉钰影视文化传媒公司举办隆重的开业典礼。随之，公司倾力打造的虚拟现实项目“梦客VR”隆重上线并参加了重庆市陈家坪CCX动漫游戏展，反响强烈。公司团队全部为80、90后，力争在新媒体与科技蓬勃发展的洪流中宣誓自己的使命：传递正能量！我们有信心成为一个有品质有影响力的新型整合传媒公司，欢迎各界商务洽谈！</p>
 						</a>
 					</div>
 				</div>
 				
 				<!-- part 2 -->
-				<div class="intr_part">
+				<!-- <div class="intr_part">
 					<div class="i_body_title">
 						<a>精进技术  科技服务</a>
 					</div>
@@ -426,7 +118,7 @@ input {
 					        <p>嘉钰科技集团将一如既往地肩负科技使命，传承爱心文化，大力发展“十一屏三网二云”及“云移物大智网+机器人”产业生态链，完成“工→工→技→e贸”转型升级的更高目标，缔造“长期、稳定、发展、科技、国际”的长青伟业！</p>
 					    </a>
 					</div>
-			</div>
+			</div> -->
 			</div>
 		</div>
 	</div>

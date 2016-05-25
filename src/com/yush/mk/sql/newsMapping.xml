@@ -12,10 +12,15 @@
 <select id="findHomeNews" resultType="hashmap">
 	SELECT t1.n_id,t1.n_title,n_view,n_type,t1.n_createtime FROM jy_news t1 JOIN jy_news_home t2 ON t1.n_id=t2.n_id
 </select>
-<select id="findRecommedNews" parameterType="int" resultType="hashmap">
+<select id="findRecommendNews" parameterType="int" resultType="hashmap">
 	SELECT n_id,n_title,n_createtime,n_body,n_img,n_type FROM jy_news WHERE n_recommend="1" ORDER BY n_createtime DESC LIMIT  #{start},10;
 </select>
-
+<select id="findPreNews" parameterType="string" resultType="hashmap">
+	SELECT n_id,n_title FROM jy_news WHERE n_createtime&gt;#{n_createtime} ORDER BY n_createtime  LIMIT 1;
+</select>
+<select id="findNextNews" parameterType="string" resultType="hashmap">
+	SELECT n_id,n_title FROM jy_news WHERE n_createtime&lt;#{n_createtime} ORDER BY n_createtime DESC LIMIT 1;
+</select>
 <insert id="createNews" parameterType="com.yush.mk.entity.News">
 	INSERT INTO jy_news(n_id,n_title,n_body,n_createtime,n_type,n_view,n_img,n_abstract)
 	VALUES(

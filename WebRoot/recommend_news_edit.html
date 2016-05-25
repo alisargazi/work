@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>新闻编缉中心</title>
 <meta charset="utf-8">
 <style type="text/css">
 a:link{
@@ -524,6 +525,7 @@ input {
 }
 #only_recommend{
 	cursor:pointer;
+	color:#50C0A7; 
 }
 #only_recommend:hover{
 	color:#50C0A7; 
@@ -531,11 +533,10 @@ input {
 
 
 </style>
-<script type="text/javascript" src="_js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/timeFormat.js"></script>
 <script type="text/javascript" src="js/load_news_list.js"></script>
 <script type="text/javascript" src="js/page_change.js"></script>
-<script type="text/javascript" src="js/add_edit_option.js"></script>
 <script type="text/javascript" src="js/load_recommend_list.js"></script>
 <script type="text/javascript" src="js/js_style.js"></script>
 <script type="text/javascript" src="js/news_option.js"></script>
@@ -544,28 +545,31 @@ input {
 <script type="text/javascript">
 	
 	$(function(){
+		var uid = getCookie("uid")
+		if (uid == null || uid == "") {
+			window.location.href = "log_in.html"
+		}
 		if(getCookie("recommend")==null){
-		addCookie("recommend","1",0.2);
+		addCookie("recommend","0",0.2);
 		}
 		var recommend=parseInt(getCookie("recommend"));
 		if(recommend%2){
-				 page_change_recommend();
-			}else{
-				page_change_load();
-			}
-		alert(recommend);
+			$("#only_recommend").text("全部列表");
+			 recommend_page_load();
+		}else{
+			$("#only_recommend").text("只看推荐");
+			news_page_load();
+		}
 		$("#only_recommend").click(function(){
 			addCookie("recommend",++recommend,0.2);
-			if(recommend%2){
-				 page_change_recommend();
-				 news_option();
-			}else{
-				page_change_load();
-				news_option();
-			}
-			js_stytle();
+			location.reload([true]);
+			
+		});
+		$("#page_mo li").click(function(){
+			add_edit_option();
 		});
 		news_option();
+		js_stytle();
 	});
 	
 	

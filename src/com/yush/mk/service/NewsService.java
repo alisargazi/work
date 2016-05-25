@@ -1,5 +1,7 @@
 package com.yush.mk.service;
 
+import java.security.Timestamp;
+
 import com.yush.mk.entity.MkResult;
 
 public interface NewsService {
@@ -10,5 +12,7 @@ public interface NewsService {
 	public MkResult removeRecommend(String id);
 	public MkResult setRecommend(String id);
 	public MkResult deleNews(String id);
-	public MkResult findRecommedNews(int page);
+	public MkResult findRecommendNews(int page);
+	public MkResult findPreNews(String time);
+	public MkResult findNextNews(String time);
 }

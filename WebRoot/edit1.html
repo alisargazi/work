@@ -39,6 +39,10 @@ li{
 			var title = $("#articleTitle").val().trim();
 			var abstr = $("#abstr").val().trim();
 			var body = CKEDITOR.instances.body.getData();
+			if(body.lenght<500||title<5||abstr<10){
+				alert("太少了，再写点吧－ －")
+				return;
+			}
 			$.ajax({
 				url : "http://localhost:8090/jiayu/news/create.do",
 				type : "post",
@@ -61,7 +65,7 @@ li{
 </head>
 <body>
 	<div id="recomend_edit">
-		<a href="recommened_news_edit.html">新闻处理</a>
+		<a href="recommend_news_edit.html">新闻处理</a>
 	</div>
 	<dt>
 		<div class="fWrap" style=" padding-bottom:8px;">
@@ -76,7 +80,7 @@ li{
 				<li>
 				<span class="cTit" id="title">摘要：</span>
 				<div class="cInfo">
-					<textarea id="abstr" style="overflow:auto">111</textarea>
+					<textarea id="abstr" style="overflow:auto"></textarea>
 
 				</div>
 				</li>

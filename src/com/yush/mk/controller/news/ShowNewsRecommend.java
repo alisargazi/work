@@ -16,7 +16,7 @@ public class ShowNewsRecommend {
 	@RequestMapping("/recommendnews.do")
 	@ResponseBody
 	public MkResult execute(int page){
-		MkResult result=service.findRecommedNews(page);
+		MkResult result=service.findRecommendNews(page);
 		return result;
 	}
 }

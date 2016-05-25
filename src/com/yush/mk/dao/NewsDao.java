@@ -1,5 +1,6 @@
 package com.yush.mk.dao;
 
+import java.security.Timestamp;
 import java.util.List;
 import java.util.Map;
 
@@ -16,5 +17,7 @@ public interface NewsDao {
 	public void setRecommend(String n_id);
 	public void removeRecommend(String n_id);
 	public void deleNews(String n_id);
-	public List<Map<String,String>> findRecommedNews(int start);
+	public List<Map<String,String>> findRecommendNews(int start);
+	public Map<String,String> findPreNews(String n_createtime);
+	public Map<String,String> findNextNews(String n_createtime);
 }

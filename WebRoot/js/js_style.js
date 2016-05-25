@@ -1,4 +1,4 @@
-function js_stytle(){
+function js_stytle2(){
 		//鼠标悬停图片切换
 		$("#img_home_1").mousemove(function(){
 			this.src="img/hover_01.png";

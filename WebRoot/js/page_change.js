@@ -1,5 +1,5 @@
 	//正常新闻列表页面功能
-	function page_change_load(){
+	function news_page_load(){
 		//加载指定页面
 		load_news_list(1);
 		var flag=1; 
@@ -43,7 +43,7 @@
 		});
 	}
 	//推荐新闻加载
-function page_change_recommend(){
+function recommend_page_load(){
 		load_recommend_list(1);
 		//控制不加载空白页并提示没有内容
 		var flag=1; 

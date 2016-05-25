@@ -9,7 +9,7 @@ import com.yush.mk.entity.MkResult;
 import com.yush.mk.entity.NewsAdmin;
 @Service
 //扫描控制组件
-public class UserServiceImp1 implements UserService{
+public class UserServiceImpl implements UserService{
 	@Resource
 	private UserDao userDao;
 	public MkResult checkName(String name,String pwd) {
