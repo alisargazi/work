@@ -1,10 +1,9 @@
 package com.yush.mk.service;
 
-import java.io.File;
-
-import com.yush.mk.entity.MkResult;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public interface PictureService {
-	public MkResult savePic(File beforFile,String name);
+	public void savePic(HttpServletRequest request, HttpServletResponse response);
 	
 }

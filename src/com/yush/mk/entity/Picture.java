@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 
 public class Picture {
 	private String p_id;
+	private String p_name;
 	private String p_url;
 	private String p_localsite;
 	private Timestamp p_createtime;
@@ -30,5 +31,11 @@ public class Picture {
 	}
 	public void setP_createtime(Timestamp p_createtime) {
 		this.p_createtime = p_createtime;
+	}
+	public String getP_name() {
+		return p_name;
+	}
+	public void setP_name(String p_name) {
+		this.p_name = p_name;
 	}
 }
