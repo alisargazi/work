@@ -26,6 +26,10 @@ public class MkUtil {
 		}
 		return id;
 	}
+	public static String createPicId(){
+		String id=createRandomCharData(10);
+		return id;
+	}
 	/**
 	 * 随机数生成，生成length位随机数
 	 * @param length

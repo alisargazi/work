@@ -15,10 +15,18 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+	<servlet>
+    <servlet-name>fileUpLoad</servlet-name>
+    <servlet-class>com.yush.mk.controller.pic.UpLoad</servlet-class>
+  </servlet>
 	<servlet-mapping>
 		<servlet-name>springmvc</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+    <servlet-name>fileUpLoad</servlet-name>
+    <url-pattern>/UpLoad</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>home1.html</welcome-file>
   </welcome-file-list>
